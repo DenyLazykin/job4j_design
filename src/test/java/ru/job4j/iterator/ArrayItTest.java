@@ -8,7 +8,7 @@ class ArrayItTest {
     @Test
     void whenMultiCallHasNextThenTrue() {
         ArrayIt it = new ArrayIt(
-                new int[]{1, 2, 3}
+                new int[]{1, 2, 3, 4}
         );
         boolean rsl = it.hasNext();
         assertThat(rsl).isTrue();
@@ -17,10 +17,12 @@ class ArrayItTest {
     @Test
     void whenReadSequence() {
         ArrayIt it = new ArrayIt(
-                new int[]{1, 2, 3}
+                new int[]{1, 2, 3, 4}
         );
         assertThat(it.next()).isEqualTo(1);
         assertThat(it.next()).isEqualTo(2);
         assertThat(it.next()).isEqualTo(3);
+        assertThat(it.next()).isEqualTo(4);
+
     }
 }
