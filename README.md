@@ -1,1 +1,2 @@
 # job4j_design
+# Проект содержит решения блоков "CollectionsPro", "Ввод-Вывод, Socket", "SQL, JDBC","GC, работа с памятью", "ООД (SOLID, TDD)" курса <a href="https://github.com/DenyLazykin/job4j_design"> Job4j по разработке на языке Java</a>.
