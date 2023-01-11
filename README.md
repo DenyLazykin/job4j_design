@@ -1,2 +1,12 @@
-# job4j_design
-# Проект содержит решения блоков "CollectionsPro", "Ввод-Вывод, Socket", "SQL, JDBC","GC, работа с памятью", "ООД (SOLID, TDD)" курса <a href="https://github.com/DenyLazykin/job4j_design"> Job4j по разработке на языке Java</a>.
+# Job4j. Блок структуры данных и алгоритмы
+Проект содержит решения блока "Структуры данных и алгоритмы."
+
+В этом проекте рассмотрены:
+- Maven
+- AssertJ
+- Iterator
+- Generic
+- List
+- Set
+- Map
+- Tree
