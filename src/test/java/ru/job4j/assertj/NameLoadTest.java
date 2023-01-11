@@ -26,7 +26,7 @@ class NameLoadTest {
     void checkKey() {
         NameLoad nameLoad = new NameLoad();
         String name = "=a";
-        assertThatThrownBy(()-> nameLoad.parse(name))
+        assertThatThrownBy(() -> nameLoad.parse(name))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageMatching("^.+")
                 .hasMessageContaining("key");
@@ -36,7 +36,7 @@ class NameLoadTest {
     void checkValue() {
         NameLoad nameLoad = new NameLoad();
         String name = "a=";
-        assertThatThrownBy(()-> nameLoad.parse(name))
+        assertThatThrownBy(() -> nameLoad.parse(name))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageMatching("^.+")
                 .hasMessageContaining("value");
