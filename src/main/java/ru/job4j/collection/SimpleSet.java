@@ -48,7 +48,6 @@ public class SimpleSet {
      * Увеличивает размер контейнера.
      */
     private void grow() {
-        int length = container.length * 2;
-        container = new String[length];
+        container = Arrays.copyOf(container, container.length * 2);
     }
 }
