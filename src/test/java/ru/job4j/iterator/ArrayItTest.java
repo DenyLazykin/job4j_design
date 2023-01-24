@@ -25,4 +25,5 @@ class ArrayItTest {
         assertThat(it.next()).isEqualTo(4);
 
     }
+
 }

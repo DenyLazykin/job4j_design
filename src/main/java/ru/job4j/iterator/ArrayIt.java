@@ -2,9 +2,6 @@ package ru.job4j.iterator;
 
 import java.util.Iterator;
 
-/**
- * Класс для проверки работы тестов.
- */
 public class ArrayIt implements Iterator<Integer> {
     private final int[] data;
     private int point = 0;
