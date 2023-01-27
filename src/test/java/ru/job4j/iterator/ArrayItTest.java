@@ -14,6 +14,7 @@ class ArrayItTest {
         assertThat(rsl).isTrue();
         assertThat(it.hasNext()).isTrue();
     }
+
     @Test
     void whenReadSequence() {
         ArrayIt it = new ArrayIt(
@@ -25,5 +26,4 @@ class ArrayItTest {
         assertThat(it.next()).isEqualTo(4);
 
     }
-
 }
