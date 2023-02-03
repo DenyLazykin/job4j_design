@@ -40,19 +40,19 @@ class EvenNumbersIteratorTest {
 
     @Test
     void shouldReturnFalseIfNoAnyEvenNumbers() {
-        it = new EvenNumbersIterator(new int[] {1});
+        it = new EvenNumbersIterator(new int[]{1});
         assertThat(it.hasNext()).isFalse();
     }
 
     @Test
     void shouldReturnFalseIfNoAnyNumbers() {
-        it = new EvenNumbersIterator(new int[] {});
+        it = new EvenNumbersIterator(new int[]{});
         assertThat(it.hasNext()).isFalse();
     }
 
     @Test
     void allNumbersAreEven() {
-        it = new EvenNumbersIterator(new int[]{2,4,6,8});
+        it = new EvenNumbersIterator(new int[]{2, 4, 6, 8});
         assertThat(it.hasNext()).isTrue();
         assertThat(it.next()).isEqualTo(2);
         assertThat(it.hasNext()).isTrue();
@@ -66,7 +66,7 @@ class EvenNumbersIteratorTest {
 
     @Test
     void allNumbersAreOdd() {
-        it = new EvenNumbersIterator(new int[]{1,3,5,7});
+        it = new EvenNumbersIterator(new int[]{1, 3, 5, 7});
         assertThat(it.hasNext()).isFalse();
         assertThat(it.hasNext()).isFalse();
     }
