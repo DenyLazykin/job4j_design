@@ -1,4 +1,4 @@
-package ru.job4j.generics.task;
+package ru.job4j.generics.exercises;
 
 class Robot {
     private String name;
