@@ -1,8 +1,8 @@
 package ru.job4j.generics.exercises;
 
 public class GenericMethods {
-    public <T, U, R> void f(T x, U y, R z) {
-        System.out.println(x.getClass().getName() + " " + y.getClass().getName() + " " + z.getClass().getName());
+    public <T, U> void f(T x, U y, Double d) {
+        System.out.println(x.getClass().getName() + " " + y.getClass().getName() + " " + d.getClass().getName());
     }
 
     public static void main(String[] args) {
