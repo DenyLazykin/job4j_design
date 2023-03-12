@@ -12,4 +12,89 @@ class UserStoreTest {
         User result = store.findBy("1");
         assertThat(result.getUserName()).isEqualTo("Petr");
     }
+
+    @Test
+    void whenAddAndFindThenUserIsNull() {
+        UserStore store = new UserStore();
+        store.add(new User("1", "Petr"));
+        User result = store.findBy("10");
+        assertThat(result).isNull();
+    }
+
+    @Test
+    void whenAddDuplicateAndFindUsernameIsPetr() {
+        UserStore store = new UserStore();
+        store.add(new User("1", "Petr"));
+        store.add(new User("1", "Maxim"));
+        User result = store.findBy("1");
+        assertThat(result.getUserName()).isEqualTo("Petr");
+    }
+
+    @Test
+    void whenReplaceThenUsernameIsMaxim() {
+        UserStore store = new UserStore();
+        store.add(new User("1", "Petr"));
+        store.replace("1", new User("1", "Maxim"));
+        User result = store.findBy("1");
+        assertThat(result.getUserName()).isEqualTo("Maxim");
+    }
+
+    @Test
+    void whenNoReplaceUserThenNoChangeUsername() {
+        UserStore store = new UserStore();
+        store.add(new User("1", "Petr"));
+        store.replace("10", new User("10", "Maxim"));
+        User result = store.findBy("1");
+        assertThat(result.getUserName()).isEqualTo("Petr");
+    }
+
+    @Test
+    void whenDeleteUserThenUserIsNull() {
+        UserStore store = new UserStore();
+        store.add(new User("1", "Petr"));
+        store.delete("1");
+        User result = store.findBy("1");
+        assertThat(result).isNull();
+    }
+
+    @Test
+    void whenNoDeleteUserThenUsernameIsPetr() {
+        UserStore store = new UserStore();
+        store.add(new User("1", "Petr"));
+        store.delete("10");
+        User result = store.findBy("1");
+        assertThat(result.getUserName()).isEqualTo("Petr");
+    }
+
+    @Test
+    void whenReplaceOkThenTrue() {
+        UserStore store = new UserStore();
+        store.add(new User("1", "Petr"));
+        boolean rsl = store.replace("1", new User("1", "Maxim"));
+        assertThat(rsl).isTrue();
+    }
+
+    @Test
+    void whenReplaceNotOkThenFalse() {
+        UserStore store = new UserStore();
+        store.add(new User("1", "Petr"));
+        boolean rsl = store.replace("10", new User("10", "Maxim"));
+        assertThat(rsl).isFalse();
+    }
+
+    @Test
+    void whenDeleteOkThenTrue() {
+        UserStore store = new UserStore();
+        store.add(new User("1", "Petr"));
+        boolean rsl = store.delete("1");
+        assertThat(rsl).isTrue();
+    }
+
+    @Test
+    void whenDeleteNotOkThenFalse() {
+        UserStore store = new UserStore();
+        store.add(new User("1", "Petr"));
+        boolean rsl = store.delete("10");
+        assertThat(rsl).isFalse();
+    }
 }
